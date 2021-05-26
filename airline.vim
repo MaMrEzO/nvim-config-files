@@ -92,7 +92,7 @@ let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 
 "%p%% %#__accent_bold#%{g:airline_symbols.linenr}:%l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr} %#__restore__#%#__accent_bold# %{g:airline_symbols.colnr}:%v%#__restore__#
 "au User AirlineAfterInit  :let g:airline_section_z = airline#section#create(['%3p%% %L:%3v'])
-au User AirlineAfterInit  :let g:airline_section_z = airline#section#create(['%{g:airline_symbols.linenr}:%l%#__restore__#%#__accent_bold#/%L%'])
+au User AirlineAfterInit  :let g:airline_section_z = airline#section#create(['%{g:airline_symbols.linenr}:%l%#__restore__#%#__accent_bold#:%L%'])
 
 function! s:update_git_status()
 	  let g:airline_section_b = "%{get(g:,'coc_git_status','')}"
