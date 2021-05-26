@@ -1,7 +1,7 @@
 "let g:airline#extensions#tabline#enabled = 1
 
 if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+	let g:airline_symbols = {}
 endif
 
 
@@ -95,9 +95,9 @@ let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 au User AirlineAfterInit  :let g:airline_section_z = airline#section#create(['%{g:airline_symbols.linenr}:%l%#__restore__#%#__accent_bold#:%L%'])
 
 function! s:update_git_status()
-	  let g:airline_section_b = "%{get(g:,'coc_git_status','')}"
-  endfunction
+	let g:airline_section_b = "%{get(g:,'coc_git_status','')}"
+endfunction
 
-  let g:airline_section_b = "%{get(g:,'coc_git_status','')}"
+let g:airline_section_b = "%{get(g:,'coc_git_status','')}"
 
-  autocmd User CocGitStatusChange call s:update_git_status()
+autocmd User CocGitStatusChange call s:update_git_status()
