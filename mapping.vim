@@ -298,3 +298,10 @@ nnoremap <LEADER>fd :CocCommand flutter.devices<CR>
 nnoremap <LEADER>fr :CocCommand flutter.run<CR>
 nnoremap <LEADER>fq :CocCommand flutter.dev.quit<CR>
 nnoremap <LEADER>fa :CocCommand flutter.run<CR>
+
+"Git commands!
+nnoremap <LEADER>gw :Gwrite<CR>
+nnoremap <LEADER>gr :Gread<CR>
+nnoremap <LEADER>gaa :Git add .<CR>
+nnoremap <LEADER>gp :Git push<CR>
+nnoremap <LEADER>gc :Gcommit<CR>
