@@ -1,52 +1,52 @@
 "let g:airline#extensions#tabline#enabled = 1
 
+let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
-
-
-
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = '☰'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
+"
+"
+"
+"" unicode symbols
+"let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
+"let g:airline_symbols.crypt = '🔏'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.maxlinenr = '☰'
+"let g:airline_symbols.maxlinenr = ''
+"let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.spell = 'Ꞩ'
+"let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
-
-" powerline symbols
-"let g:airline_left_sep = ''
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-
-
-"let g:airline_powerline_fonts = 1
-""let g:airline_left_sep = ''
+"
+"" powerline symbols
+let g:airline_left_sep = ''
 "let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
-""let g:airline_right_sep = ''
+let g:airline_right_sep = ''
 "let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-""let g:airline_symbols.branch = ''
-""let g:airline_symbols.readonly = ''
-""let g:airline_symbols.linenr = ''
+let g:airline_symbols.branch = '⎇ '
+let g:airline_symbols.readonly = '🔏'
+let g:airline_symbols.linenr = ''
+"
+"
+"""let g:airline_left_sep = ''
+""let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"""let g:airline_right_sep = ''
+""let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"""let g:airline_symbols.branch = ''
+"""let g:airline_symbols.readonly = ''
+"""let g:airline_symbols.linenr = ''
 
 "let g:airline_detect_modified = 0 "if you're sticking the + in section_c you probably want to disable detection
 "function! Init()
@@ -58,7 +58,7 @@ let g:airline_right_alt_sep = ''
 
 let g:airline_mode_map = {
 			\ 'n' : '📄',
-			\ 'i' : ' ',
+			\ 'i' : '📝 ',
 			\ 'R' : '',
 			\ 'v' : ' ',
 			\ 'V' : ''  ,
@@ -79,10 +79,10 @@ let g:airline_mode_map = {
 "* enable/disable coc integration >
 let g:airline#extensions#coc#enabled = 1
 "* change error symbol: >
-let airline#extensions#coc#error_symbol = '🅔 '
+let airline#extensions#coc#error_symbol = '🛑 '
 ""<
 ""change warning symbol: >
-let airline#extensions#coc#warning_symbol = '🅦  '
+let airline#extensions#coc#warning_symbol = '🟠'
 ""<
 ""* change error format: >
 let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
@@ -92,7 +92,7 @@ let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 
 "%p%% %#__accent_bold#%{g:airline_symbols.linenr}:%l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr} %#__restore__#%#__accent_bold# %{g:airline_symbols.colnr}:%v%#__restore__#
 "au User AirlineAfterInit  :let g:airline_section_z = airline#section#create(['%3p%% %L:%3v'])
-au User AirlineAfterInit  :let g:airline_section_z = airline#section#create(['%{g:airline_symbols.linenr}:%l%#__restore__#%#__accent_bold#:%L%'])
+au User AirlineAfterInit  :let g:airline_section_z = airline#section#create(['%{g:airline_symbols.linenr}:%l%#__restore__#%#__accent_bold#:%c%'])
 
 function! s:update_git_status()
 	let g:airline_section_b = "%{get(g:,'coc_git_status','')}"

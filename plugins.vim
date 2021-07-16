@@ -2,7 +2,7 @@
 let g:ale_disable_lsp = 1
 call plug#begin('~/.local/share/nvim/plugged')
 
-"Not work in completio manner
+"Not work in completion manner
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 "LSP :)
@@ -33,6 +33,9 @@ Plug 'gutenye/json5.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
+
+
 "Plug 'puremourning/vimspector'
 "Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 "Plug 'kamykn/CCSpellCheck.vim'
@@ -50,21 +53,29 @@ Plug 'cespare/vim-toml'
 "Plug 'jeaye/color_coded'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'tiagofumo/dart-vim-flutter-layout'
-Plug 'Yggdroot/indentLine'
-Plug 'lukas-reineke/indent-blankline.nvim'
+
+"Plug 'Yggdroot/indentLine'
+"Plug 'lukas-reineke/indent-blankline.nvim'
+
 "Syntax stuff
 "Theme
 "Plug 'zenorocha/dracula-theme', { 'name': 'dracula' }
-"Plug 'dracula/vim', { 'name': 'dracula' }
-Plug 'doums/darcula'
-Plug 'norcalli/nvim-colorizer.lua'
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-"Todo and tasks
-Plug 'gilsondev/searchtasks.vim'
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'folke/todo-comments.nvim'
-"Plug 'nvim-lua/popup.nvim'
-"Plug 'nvim-telescope/telescope.nvim'
+Plug 'dracula/vim', { 'name': 'dracula' }
+"Plug 'doums/darcula'
 
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+"Todo and tasks
+"Plug 'gilsondev/searchtasks.vim'
+"Plug 'nvim-lua/plenary.nvim'
+Plug 'folke/todo-comments.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+"Git plugins ~ combined with coc-git
 Plug 'tpope/vim-fugitive'
+
+"Sql--
+Plug 'vim-scripts/dbext.vim'
 call plug#end()

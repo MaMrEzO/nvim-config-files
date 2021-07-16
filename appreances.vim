@@ -1,6 +1,6 @@
 set termguicolors
 set noarabicshape
-colorscheme darcula 
+colorscheme dracula 
 "darcula
 source ~/.config/nvim/darcula.vim
 
@@ -15,32 +15,39 @@ endif
 set guifont=JetBrains\ Mono\ Meduim:h9.5
 
 set fillchars=vert:│,eob:\ 
-set list lcs=tab:\│\ 
-let g:indentLine_char = '│'
 "set fillchars=vert:⡁
 "hi Comment gui=italic
-hi Keyword gui=italic
 hi CodeError guibg=#532B2E ctermbg=52 gui=underline
 hi CodeWarning gui=undercurl
 hi Statement  ctermfg=172  guifg=#CC7832
 if !exists('g:GuiLoaded') && !exists('g:gonvim_running')
 	hi LineNr guibg=NONE guifg=#4e4b4b
-	hi Normal guibg=NONE
+	"hi Normal guibg=NONE
 	hi SignColumn guibg=NONE
 	hi VertSplit guifg=#32312f
+	hi InfoSign ctermfg=101 ctermbg=236 guifg=#756D56 guibg=NONE
+	hi ErrorSign ctermfg=124 ctermbg=236 guifg=#9E2927 guibg=NONE
+	hi WarningSign ctermfg=136 ctermbg=236 guifg=#BE9117 guibg=NONE
+	hi CodeInfo ctermbg=101 guibg=#243124 gui=undercurl
+	hi CodeHint ctermfg=243 ctermbg=237 guibg=#3B3B3B
+	hi CodeWarning ctermbg=59 gui=undercurl guibg=#313124
+	hi CodeError ctermbg=52 gui=underline guibg=#312424
 	""hi CursorLine guibg=NONE
+
 	hi CursorLineNr guifg=#ffffff guibg=NONE
 endif
 
 "dedicated to Dracula theme:
-"let g:airline_theme='dracula'
-"hi Pmenu guibg=#44475a
-""guifg=#1d1f26 guibg=#55557f
-"hi Visual guibg=#55557f
-"hi VertSplit gui=NONE guifg=#55557f 
-"hi StatusLine guibg=#1d1f26 guifg=#1d1f26
-"hi TabLineFill guibg=#1d1f26 guifg=#1d1f26
-"hi NonText guifg=#55557f guibg=NONE
+let g:airline_theme='dracula'
+hi Pmenu guibg=#44475a
+"guifg=#1d1f26 guibg=#55557f
+hi Visual guibg=#55557f
+hi VertSplit gui=NONE guifg=#55557f 
+hi StatusLine guibg=#1d1f26 guifg=#1d1f26
+hi TabLineFill guibg=#1d1f26 guifg=#1d1f26
+hi NonText guifg=#55557f guibg=NONE
+hi DraculaSelection ctermbg=239 guibg=#6f7593
+hi link IdentifierUnderCaret DraculaSelection
 
 set number relativenumber
 "set number
@@ -100,27 +107,35 @@ function JSAdvancedHighlight()
 	syn match goExportedFiledAssign /[A-Za-z0-9_]*\ze:/
 	syn match goExportedFunctionCall /\zs[A-Za-z0-9_]*\ze(/
 	"Tag name /<\zs[A-Za-z/]* 
-	syn keyword javaScriptFunction async async await
-	call AdvancedComment()
+	syn keyword javaScriptReserved async async await
+	"call AdvancedComment()
 endfunction
 
 hi link javaScriptReserved Keyword
 
-
-hi Todo guifg=#ff7755
-hi TodoTitle guifg=#fefefe
-hi link TodoMultiline Todo
-hi link NumberedComment Todo
-hi link TodoNumberedItem Todo
-hi TodoDone guifg=#77ff55 
-hi link SingleMulti Comment
-hi link TodoMultilineDone TodoDone
-hi link NumberedCommentDone TodoDone
+"This part commented as use of TODO Plugin
+"hi Todo guifg=#ff7755
+"hi TodoTitle guifg=#fefefe
+"hi link TodoMultiline Todo
+"hi link NumberedComment Todo
+"hi link TodoNumberedItem Todo
+"hi TodoDone guifg=#77ff55 
+"hi link SingleMulti Comment
+"hi link TodoMultilineDone TodoDone
+"hi link NumberedCommentDone TodoDone
 hi Warning guifg=#ff9900 gui=bold,italic 
 source ~/.config/nvim/cursor.vim
 
 autocmd FileType dart call DartConf()
 function DartConf()
-	set tabstop=2
-	set shiftwidth=2
+	set tabstop=2 shiftwidth=2 expandtab
 endfunction
+
+
+hi GitGutterAdd guifg=#77ff55
+hi GitGutterChange guifg=#ff9900
+hi GitGutterDelete guifg=#ff7755
+hi GitGutterChangeDelete guifg=#ff2222
+
+"hi Keyword ctermfg=172 gui=NONE guifg=#CC7832
+hi Keyword ctermfg=172 gui=NONE guifg=#FF79C6

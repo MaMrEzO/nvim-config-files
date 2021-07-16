@@ -187,10 +187,11 @@ snoremap <DEL> <C-G>"_di
 
 "noremap <LEADER>l :Explore<CR>
 nnoremap <LEADER>o :NERDTreeToggle<CR>
-nnoremap <LEADER>l :FZF<CR>
-autocmd FileType dart nnoremap <LEADER>l :FZF ./lib<CR>
-autocmd FileType php nnoremap <LEADER>l :FZF ./app<CR>
-autocmd FileType rust nnoremap <LEADER>l :FZF ./src<CR>
+"nnoremap <LEADER>l :FZF<CR>
+"autocmd FileType dart nnoremap <LEADER>l :FZF ./lib<CR>
+"autocmd FileType php nnoremap <LEADER>l :FZF ./app<CR>
+"autocmd FileType rust nnoremap <LEADER>l :FZF ./src<CR>
+nnoremap <LEADER>l :Telescope find_files<CR>
 
 nnoremap <LEADER>t :SearchTasks<CR>
 autocmd FileType dart nnoremap <LEADER>t :SearchTasks ./lib/*.dart<CR>
@@ -221,7 +222,7 @@ snoremap <C-V> <C-G>"_dhpi
 "Paste in insert mode
 "inoremap <C-V> <C-O>P will fail on EOL
 "inoremap <expr> <C-V> (col(".") >= col("$") ?  '<C-O>p' : '<C-O>P')
-inoremap <C-v> <C-R>+
+inoremap <C-v> <ESC>:set paste<CR>a<C-R>+<ESC>:set nopaste<CR>a
 "-----inoremap <C-V> <C-O>:echo col(".")<CR>
 "-----inoremap <C-X> <C-O>:echo col("$")<CR>
 "-----inoremap <C-B> <C-O>:echo getpos()<CR>
@@ -229,7 +230,7 @@ inoremap <C-v> <C-R>+
 cmap <C-v> <C-R>+
 "Copy current word
 nnoremap <LEADER>w yiw
-noremap <LEADER>W ciw<c-r>0<ESC>
+noremap <LEADER>W ciw<c-r>*<ESC>
 "Copy current line
 nnoremap <LEADER>v Vy
 
@@ -298,6 +299,7 @@ nnoremap <LEADER>fd :CocCommand flutter.devices<CR>
 nnoremap <LEADER>fr :CocCommand flutter.run<CR>
 nnoremap <LEADER>fq :CocCommand flutter.dev.quit<CR>
 nnoremap <LEADER>fa :CocCommand flutter.run<CR>
+nnoremap <LEADER>fw :wa<CR>:CocRestart<CR><CR>
 
 "Git commands!
 nnoremap <LEADER>gw :Gwrite<CR>
