@@ -88,13 +88,13 @@ nnoremap <M-S-Left> gh<Home>
 nnoremap <M-S-Right> gh<End>
 
 "Exit search mode :
-nnoremap <esc> :noh<return><esc>
+nnoremap <esc> :noh<CR>
 
 "Switching buffers
 "nnoremap <LEADER>bf :buffers<CR>:buffer
 nnoremap <LEADER>b :Buffers<CR>
 "Close opened buffers
-nnoremap <LEADER>bd :buffers<CR>:bd
+nnoremap <LEADER>bd :buffers<CR>:bd 
 
 "Window switch
 "nnoremap <M-Left> :wincmd h<CR>
@@ -211,6 +211,16 @@ xnoremap <C-D> yP
 tnoremap <Esc> <C-\><C-n>
 "autocmd WinEnter * if &buftype=='terminal'|:startinsert|endif
 
+"fzf EXIT
+"autocmd Filetype fzf call SetFzFMapping()
+"function SetFzFMapping()
+"    inoremap <ESC> <ESC>:q<CR>
+"	 nnoremap <ESC> :q<CR>
+"endfunction
+if has("nvim")
+  au TermOpen * tnoremap <Esc> <c-\><c-n>
+  au FileType fzf tunmap <Esc>
+endif
 "Clipboard
 
 inoremap <C-D> <C-O>viw<C-G>

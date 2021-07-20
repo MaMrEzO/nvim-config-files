@@ -1,3 +1,10 @@
+"undercurl :
+"First off, you have to use cterm=undercurl, not just gui=undercurl. Even
+"then you have to make Vim output the right escape sequences to the
+"terminal with
+let &t_Cs = "\e[4:3m"
+let &t_Ce = "\e[4:0m"
+
 set termguicolors
 set noarabicshape
 colorscheme dracula 
@@ -139,3 +146,4 @@ hi GitGutterChangeDelete guifg=#ff2222
 
 "hi Keyword ctermfg=172 gui=NONE guifg=#CC7832
 hi Keyword ctermfg=172 gui=NONE guifg=#FF79C6
+hi SpellCap ctermbg=12 gui=undercurl cterm=undercurl guisp=Blue
