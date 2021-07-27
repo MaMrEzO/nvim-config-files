@@ -10,6 +10,8 @@ source ~/.config/nvim/appreances.vim
 " PERF test
 " NOTE test
 lua << EOF
+require('telescope').load_extension('coc')
+
 require('nvim-treesitter.configs').setup {
   ensure_installed = "rust", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = {}, -- List of parsers to ignore installing

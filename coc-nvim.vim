@@ -56,12 +56,6 @@ endif
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 nnoremap <F12> :call <SID>show_documentation()<CR>
@@ -140,6 +134,12 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+"Mapped with Telescope below
+"nmap <silent><nowait> gd <Plug>(coc-definition)
+"nmap <silent><nowait> gy <Plug>(coc-type-definition)
+"nmap <silent><nowait> gi <Plug>(coc-implementation)
+"nmap <silent><nowait> gr <Plug>(coc-references)
+
 "" Mappings for CoCList
 "" Show all diagnostics.
 "nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
@@ -159,16 +159,34 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 "nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "Using CocFZF
 "mappings
-nnoremap <silent> <space><space> :<C-u>CocFzfList<CR>
-nnoremap <silent> <space>a       :<C-u>CocFzfList diagnostics<CR>
-nnoremap <silent> <space>b       :<C-u>CocFzfList diagnostics --current-buf<CR>
-nnoremap <silent> <space>c       :<C-u>CocFzfList commands<CR>
-"nnoremap <silent> <space>e       :<C-u>CocFzfList extensions<CR>
-"nnoremap <silent> <space>l       :<C-u>CocFzfList location<CR>
-nnoremap <silent> <space>o       :<C-u>CocFzfList outline<CR>
-nnoremap <silent> <space>s       :<C-u>CocFzfList symbols<CR>
-nnoremap <silent> <space>p       :<C-u>CocFzfListResume<CR>
 
+"CocFZFList
+"nnoremap <silent> <space><space> :<C-u>CocFzfList<CR>
+"nnoremap <silent> <space>a       :<C-u>CocFzfList diagnostics<CR>
+"nnoremap <silent> <space>b       :<C-u>CocFzfList diagnostics --current-buf<CR>
+"nnoremap <silent> <space>c       :<C-u>CocFzfList commands<CR>
+""nnoremap <silent> <space>e       :<C-u>CocFzfList extensions<CR>
+""nnoremap <silent> <space>l       :<C-u>CocFzfList location<CR>
+"nnoremap <silent> <space>o       :<C-u>CocFzfList outline<CR>
+"nnoremap <silent> <space>s       :<C-u>CocFzfList symbols<CR>
+"nnoremap <silent> <space>p       :<C-u>CocFzfListResume<CR>
+
+"nnoremap  <silent><nowait> <space><space> :<C-u>Telescope coc  <CR>
+nnoremap  <silent><nowait> <space>a       :<C-u>Telescope coc workspace_diagnostics theme=get_dropdown<CR>
+nnoremap  <silent><nowait> <space>b       :<C-u>Telescope coc diagnostics theme=get_dropdown<CR>
+nnoremap  <silent><nowait> <space>c       :<C-u>Telescope coc commands theme=get_dropdown<CR>
+"nnoremap <silent><nowait> <space>e       :<C-u>Telescope coc extensions<CR>
+"nnoremap <silent><nowait> <space>l       :<C-u>Telescope coc location<CR>
+nnoremap  <silent><nowait> <space>o       :<C-u>Telescope coc document_symbols theme=get_dropdown<CR>
+nnoremap  <silent><nowait> <space>s       :<C-u>Telescope coc workspace_symbols  theme=get_dropdown<CR>
+"nnoremap  <silent><nowait> <space>p       :<C-u>Telescope coc Resume<CR>
+" GoTo code navigation.
+
+nmap <silent><nowait> gd :<C-u>Telescope coc definitions theme=get_dropdown<CR>
+nmap <silent><nowait> gy :<C-u>Telescope coc declarations theme=get_dropdown<CR>
+nmap <silent><nowait> gi :<C-u>Telescope coc implementations theme=get_dropdown<CR>
+nmap <silent><nowait> gr :<C-u>Telescope coc references theme=get_dropdown<CR>
+          
 nmap \| <Plug>(coc-cursors-position)
 
 " Experimental feature (preview definition): gp, `<leader>K`, or <Shift-F12>:

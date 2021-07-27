@@ -72,6 +72,7 @@ Plug 'folke/todo-comments.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'fannheyward/telescope-coc.nvim'
 
 "Git plugins ~ combined with coc-git
 Plug 'tpope/vim-fugitive'

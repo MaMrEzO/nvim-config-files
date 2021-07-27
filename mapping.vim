@@ -191,7 +191,7 @@ nnoremap <LEADER>o :NERDTreeToggle<CR>
 "autocmd FileType dart nnoremap <LEADER>l :FZF ./lib<CR>
 "autocmd FileType php nnoremap <LEADER>l :FZF ./app<CR>
 "autocmd FileType rust nnoremap <LEADER>l :FZF ./src<CR>
-nnoremap <LEADER>l :Telescope find_files<CR>
+nnoremap <LEADER>l :Telescope find_files theme=get_dropdown<CR>
 
 nnoremap <LEADER>t :SearchTasks<CR>
 autocmd FileType dart nnoremap <LEADER>t :SearchTasks ./lib/*.dart<CR>
@@ -232,7 +232,7 @@ snoremap <C-V> <C-G>"_dhpi
 "Paste in insert mode
 "inoremap <C-V> <C-O>P will fail on EOL
 "inoremap <expr> <C-V> (col(".") >= col("$") ?  '<C-O>p' : '<C-O>P')
-inoremap <C-v> <ESC>:set paste<CR>a<C-R>+<ESC>:set nopaste<CR>a
+inoremap <silent><nowait> <C-v> <ESC>:set paste<CR>a<C-R>+<ESC>:set nopaste<CR>a
 "-----inoremap <C-V> <C-O>:echo col(".")<CR>
 "-----inoremap <C-X> <C-O>:echo col("$")<CR>
 "-----inoremap <C-B> <C-O>:echo getpos()<CR>
