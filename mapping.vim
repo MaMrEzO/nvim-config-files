@@ -1,4 +1,4 @@
-"set timeoutlen=500
+set timeoutlen=500
 
 map <C-LeftMouse> <NOP>
 map <C-MiddleMouse> <NOP>
@@ -148,37 +148,47 @@ inoremap <C-Del> <C-O>vwh"_d
 inoremap <expr> <M-BS> (col(".") >= col("$") - 1? '<C-O>vb"_d' : '<C-O>h<C-O>vb"_d')
 
 "Preventig deleted  to be yanked
+function! CurrectInsert()
+	if col(".") >= col("$") - 1
+		call feedkeys('a')	
+	else 
+		call feedkeys('i')
+	endif
+endfunction
 "Test text to delete
 vnoremap x "_d
 nnoremap x v"_d
-vnoremap c "_di
+vnoremap <silent> c "_d:call CurrectInsert()<CR>
 "nnoremap cc "_ddO
-nnoremap cc $v^"_di
-nnoremap ce ve"_di
-nnoremap cb vb"_di
-nnoremap cw vw"_di
-nnoremap ciw viw"_di
-nnoremap ci} vi}"_di
-nnoremap ci) vi)"_di
-nnoremap ci] vi]"_di
-nnoremap ci> vi>"_di
-nnoremap ci" vi""_di
-nnoremap ci' vi'"_di
-nnoremap ci` vi`"_di
-nnoremap caw vaw"_di
-nnoremap ca} va}"_di
-nnoremap ca) va)"_di
-nnoremap ca] va]"_di
-nnoremap ca> va>"_di
-nnoremap ca" va""_di
-nnoremap ca' va'"_di
-nnoremap ca` va`"_di
-nnoremap c$ v$h"_di
-nnoremap dd "_dd
-nnoremap db hvb"_d
-nnoremap de ve"_d
-nnoremap dw vw"_d
-nnoremap diw viw"_d
+nnoremap <silent> cc $v^"_d:call CurrectInsert()<CR>
+nnoremap <silent> ce ve"_d:call CurrectInsert()<CR>
+nnoremap <silent> cb vb"_d:call CurrectInsert()<CR>
+nnoremap <silent> cw vw"_d:call CurrectInsert()<CR>
+nnoremap <silent> ciw viw"_d:call CurrectInsert()<CR>
+nnoremap <silent> ciW viW"_d:call CurrectInsert()<CR>
+nnoremap <silent> ci} vi}"_d:call CurrectInsert()<CR>
+nnoremap <silent> ci) vi)"_d:call CurrectInsert()<CR>
+nnoremap <silent> ci] vi]"_d:call CurrectInsert()<CR>
+nnoremap <silent> ci> vi>"_d:call CurrectInsert()<CR>
+nnoremap <silent> ci" vi""_d:call CurrectInsert()<CR>
+nnoremap <silent> ci' vi'"_d:call CurrectInsert()<CR>
+nnoremap <silent> ci` vi`"_d:call CurrectInsert()<CR>
+nnoremap <silent> caw vaw"_d:call CurrectInsert()<CR>
+nnoremap <silent> caW vaW"_d:call CurrectInsert()<CR>
+nnoremap <silent> ca} va}"_di
+nnoremap <silent> ca) va)"_di
+nnoremap <silent> ca] va]"_di
+nnoremap <silent> ca> va>"_di
+nnoremap <silent> ca" va""_di
+nnoremap <silent> ca' va'"_di
+nnoremap <silent> ca` va`"_di
+nnoremap <silent> c$ v$h"_d:call CurrectInsert()<CR>
+nnoremap <silent> dd "_dd
+nnoremap <silent> db hvb"_d
+nnoremap <silent> de ve"_d
+nnoremap <silent> dw vwh"_d
+nnoremap <silent> diw viw"_d
+nnoremap <silent> diW viW"_d
 nnoremap <Del> "_d
 xnoremap <Del> "_d
 nnoremap <S-Del> viw"_d
