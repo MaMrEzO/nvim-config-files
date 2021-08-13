@@ -78,5 +78,10 @@ Plug 'fannheyward/telescope-coc.nvim'
 Plug 'tpope/vim-fugitive'
 
 "Sql--
-Plug 'vim-scripts/dbext.vim'
+"Plug 'vim-scripts/dbext.vim'
+Plug 'tpope/vim-dadbod'
+
+"Svelte
+Plug 'leafOfTree/vim-svelte-plugin'
+Plug 'leafgarland/typescript-vim'
 call plug#end()

@@ -135,7 +135,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 "Mapped with Telescope below
-"nmap <silent><nowait> gd <Plug>(coc-definition)
+nmap <silent><nowait> gd <Plug>(coc-definition)
 "nmap <silent><nowait> gy <Plug>(coc-type-definition)
 "nmap <silent><nowait> gi <Plug>(coc-implementation)
 "nmap <silent><nowait> gr <Plug>(coc-references)
@@ -182,7 +182,7 @@ nnoremap  <silent><nowait> <space>s       :<C-u>Telescope coc workspace_symbols 
 "nnoremap  <silent><nowait> <space>p       :<C-u>Telescope coc Resume<CR>
 " GoTo code navigation.
 
-nmap <silent><nowait> gd :<C-u>Telescope coc definitions theme=get_dropdown<CR>
+"nmap <silent><nowait> gd :<C-u>Telescope coc definitions theme=get_dropdown<CR>
 nmap <silent><nowait> gy :<C-u>Telescope coc declarations theme=get_dropdown<CR>
 nmap <silent><nowait> gi :<C-u>Telescope coc implementations theme=get_dropdown<CR>
 nmap <silent><nowait> gr :<C-u>Telescope coc references theme=get_dropdown<CR>

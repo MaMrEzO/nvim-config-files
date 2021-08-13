@@ -13,7 +13,7 @@
 	"coc.source.issues.priority": 99,
 	"signature.preferShownAbove": false,
 	"coc.preferences.jumpCommand": "drop",
-	"coc.preferences.formatOnSaveFiletypes": ["go","typescript","typescriptreact", "js", "ts", "rust", "vim", "dart"],
+	"coc.preferences.formatOnSaveFiletypes": ["go","typescript","typescriptreact", "svelte", "js", "javascript", "ts", "rust", "vim", "dart"],
 	"suggest.enablePreview": false,
 	"suggest.detailField": "preview",
 	"suggest.noselect": true,
@@ -21,10 +21,12 @@
 	"suggest.numberSelect": false,
 	"coc.source.buffer.priority": 1,
 	"list.source.outline.defaultArgs": ["-kind"],
+	
 
+	"svelte.plugin.typescript.definitions.enable": true,
+	
 	//"languageserver": {
 	//	"go": {
-
 	//		"command": "gopls",
 	//		"rootPatterns": ["go.mod"],
 	//		"trace.server": "verbose",
@@ -33,6 +35,11 @@
 	//		"formatterPriority": 99
 	//	}
 	//},
+	"go.goplsOptions": {
+		"usePlaceholders": true,
+		"linksInHover": true,
+		"hoverKind": "FullDocumentation"
+	},
 	"suggest.completionItemKindLabels": {
 		"function": "",
 		"method": "⚙️ ",
@@ -74,7 +81,6 @@
 	//"flutter!.autoHideDevLog": false,
 	//"dart.previewLsp": false,
 	"flutter.UIPath": false,
-	"sql.database": "postgresql",
 	"cSpell.enabledLanguageIds": [
 		"vim",
 		"asciidoc",
@@ -109,7 +115,8 @@
 		"typescript",
 		"typescriptreact",
 		"yaml",
-		"yml"
+		"yml",
+		"svelte"
 	],
 	"cSpell.allowCompoundWords": true,
 	"cSpellExt.enableDictionaries": [
@@ -126,6 +133,7 @@
     "Samim",
     "Sheng",
     "Unprocessable",
+    "Zare",
     "actix",
     "clsx",
     "cupertino",
@@ -137,6 +145,8 @@
     "ilike",
     "jalaali",
     "neoclide",
+    "packr",
+    "popmw",
     "rrggbb",
     "strs",
     "undelete",
