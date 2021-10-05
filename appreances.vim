@@ -133,8 +133,11 @@ hi link javaScriptReserved Keyword
 hi Warning guifg=#ff9900 gui=bold,italic 
 source ~/.config/nvim/cursor.vim
 
-autocmd FileType dart call DartConf()
-function DartConf()
+autocmd FileType dart call SoftTab2()
+autocmd FileType svelte call SoftTab2()
+autocmd FileType typescript call SoftTab2()
+autocmd FileType javascript call SoftTab2()
+function SoftTab2()
 	set tabstop=2 shiftwidth=2 expandtab
 endfunction
 

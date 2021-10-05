@@ -201,6 +201,7 @@ nnoremap <LEADER>o :NERDTreeToggle<CR>
 "autocmd FileType dart nnoremap <LEADER>l :FZF ./lib<CR>
 "autocmd FileType php nnoremap <LEADER>l :FZF ./app<CR>
 "autocmd FileType rust nnoremap <LEADER>l :FZF ./src<CR>
+nnoremap <LEADER><LEADER> :Telescope find_files <CR>
 nnoremap <LEADER>l :Telescope find_files theme=get_dropdown<CR>
 
 nnoremap <LEADER>t :SearchTasks<CR>

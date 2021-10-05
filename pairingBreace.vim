@@ -9,7 +9,12 @@ snoremap <silent> / <C-G>"sdi/**/<ESC>hh"sp<ESC>a
 snoremap <silent> ( <C-G>"sdi()<ESC>h"sp<ESC>a
 snoremap <silent> [ <C-G>"sdi[]<ESC>h"sp<ESC>a
 
-"Pair completio, but I type by myself ;)
+
+"snoremap <expr> ( mode() ==# "v" ? "<C-g>o<Esc>i(<Esc>gvol<Esc>a)" : "<C-g><Esc>O)<Esc>gvo<Esc>o("
+"xnoremap <silent> O)<Esc>gvo<Esc>o(
+
+
+"Pair completion, but I type by myself ;)
 inoremap <expr> { '{}<LEFT>'
 inoremap <expr> [ '[]<LEFT>'
 inoremap <expr> ( '()<LEFT>'
@@ -19,7 +24,7 @@ inoremap <expr> < '<><LEFT>'
 "inoremap // //
 "inoremap /** /**/<ESC>hi
 "inoremap /*<CR> /*<CR>*/<ESC>O
-"Qoute pairs migrated to new version with <expr>
+"Quote pairs migrated to new version with <expr>
 "inoremap ` ``<ESC>i
 "inoremap ' ''<ESC>i
 "inoremap " ""<ESC>i

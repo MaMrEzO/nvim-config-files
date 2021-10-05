@@ -15,17 +15,18 @@ require('telescope').load_extension('coc')
 require('nvim-treesitter.configs').setup {
   ensure_installed = "rust", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = {}, -- List of parsers to ignore installing
+
   highlight = {
     enable = true,              -- false will disable the whole extension
     --disable = { "c", "rust" },  -- list of language that will be disabled
   },
 }
 require("todo-comments").setup {
-	--TODO:
-	--HACK:
-	--WARN:
-	--PERF:
-	--NOTE:
+	-- TODO:
+	-- HACK:
+	-- WARN:
+	-- PERF:
+	-- NOTE:
 	signs = true, -- show icons in the signs column
 	sign_priority = 10, -- sign priority
 	-- keywords recognized as todo comments
@@ -82,7 +83,9 @@ EOF
 
 "Svelte
 let g:vim_svelte_plugin_use_typescript = 1
+let g:vim_svelte_plugin_use_scss = 1
 let g:vim_svelte_plugin_load_full_syntax = 1
+let g:vim_svelte_plugin_use_foldexpr = 1
 
 "MaMrEzO
 set mouse=a
@@ -105,7 +108,7 @@ set shortmess+=F  " to get rid of the file name displayed in the command line ba
 
 "search tasks
 " List occurrences for search
-"let g:searchtasks_list=["TODO", "FIXME"]
+let g:searchtasks_list=["TODO", "FIXME", "WARN", "BUG"]
 
 "Sql dbext
 source ~/.config/nvim/dbext.vim
@@ -128,6 +131,7 @@ let g:yats_host_keyword = 1
 source ~/.config/nvim/indentline.vim
 
 source ~/.config/nvim/mapping.vim
+source ~/.config/nvim/comments.vim
 source ~/.config/nvim/clipboard.vim
 source ~/.config/nvim/pairingBreace.vim
 source ~/.config/nvim/CCSpellCheck.vim

@@ -66,7 +66,7 @@ Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 "Todo and tasks
-"Plug 'gilsondev/searchtasks.vim'
+Plug 'gilsondev/searchtasks.vim'
 "Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -82,6 +82,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dadbod'
 
 "Svelte
-Plug 'leafOfTree/vim-svelte-plugin'
-Plug 'leafgarland/typescript-vim'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+"Plug 'leafOfTree/vim-svelte-plugin'
+"Plug 'leafgarland/typescript-vim'
 call plug#end()
